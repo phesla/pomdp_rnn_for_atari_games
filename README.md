@@ -1,4 +1,5 @@
-# pomdp rnn for atari games
+# POMDP RNN for atari games.
+
 ## We have made simple pipeline to make and train reinforcement agent models to aproximate POMDP by convolution and recurrent neural networks.
 
 ## To run train
