@@ -10,7 +10,7 @@ PYTHONPATH=. python cli/train.py --config_path=./configs/your_config.yml
 ```
 
 ## To run test
-You can write video by running test script after (for example) 10 iterations (videos will be saved by defined path). Then change your config path to the new saved agent model path and run training process again. Then run test script second time to compare agent quality.
+You can write video by running test script after (for example) 10 iterations (videos will be saved by defined path). Then change your config path to the new saved agent model path and run training process again. Then run test script second time to compare agent quality by wroted video in `./videos/` or in your defined path for videos.
 To run testing process you shoud change paths to the local paths (see config what you will use) and then run:
 ```
 PYTHONPATH=. python cli/test.py --config_path=./configs/your_config.yml
