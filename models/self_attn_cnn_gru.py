@@ -3,6 +3,10 @@ from torch import nn
 from torch.nn import functional as F
 import numpy as np
 
+class Flatten(nn.Module):
+    def forward(self, input):
+        return input.view(input.size(0), -1)
+
 class SelfAttnRecurrentAgent(nn.Module):
 
     def __init__(

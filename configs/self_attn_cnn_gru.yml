@@ -1,0 +1,29 @@
+params:
+  experiment: "self_attn_agent_v2"
+
+  paths:
+    trained_weigths_path: None
+    trained_model_path: "./weights/self_attn_agent.pth"
+    weigths_path_to_save: "./weights/"
+    test_videos_path: "./videos/"
+    figures_path: "./figures/"
+
+  common:
+    env_name: "KungFuMasterDeterministic-v0"
+    height: 42
+    width: 42
+
+  model:
+    hidden_dim: 256
+    conv_num_filters: 64
+    linear_dim: 256
+
+  train:
+    parallels_game_count: 5
+    iter_count: 15000
+    reward_limit: 4000
+    lr: 0.0001
+    gamma: 0.99
+
+  test:
+    game_count: 2
