@@ -1,17 +1,16 @@
 import torch
 
 
-
-
 def to_one_hot(
         y: torch.Tensor,
         n_dims:int = None
 ):
     """ Take an integer tensor and convert it to 1-hot matrix. """
-    y_tensor = y.to(dtype=torch.int64).view(-1, 1)
+    y_tensor = y.to(dtype=torch.int64).contiguous().view(-1, 1)
     n_dims = n_dims if n_dims is not None else int(torch.max(y_tensor)) + 1
     y_one_hot = torch.zeros(y_tensor.size()[0], n_dims).scatter_(1, y_tensor, 1)
     return y_one_hot
+
 
 def evaluate(
         agent,
