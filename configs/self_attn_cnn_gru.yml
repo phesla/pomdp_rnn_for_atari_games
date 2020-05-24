@@ -1,9 +1,9 @@
 params:
-  experiment: "self_attn_agent_v2"
+  experiment: "self_attn_agent_v3"
 
   paths:
-    trained_weigths_path: None
-    trained_model_path: "./weights/self_attn_agent.pth"
+    trained_weigths_path:
+    trained_model_path: "./weights/self_attn_agent_v3.pt"
     weigths_path_to_save: "./weights/"
     test_videos_path: "./videos/"
     figures_path: "./figures/"
@@ -14,9 +14,9 @@ params:
     width: 42
 
   model:
-    hidden_dim: 256
-    conv_num_filters: 64
-    linear_dim: 256
+    hidden_dim: 128
+    conv_filters_num: 32
+    linear_dim: 128
 
   train:
     parallels_game_count: 5
