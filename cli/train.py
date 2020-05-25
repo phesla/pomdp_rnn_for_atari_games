@@ -153,13 +153,13 @@ def train(
         # затем строим отмечаем точку на графике: по оси x - время, по оси y - награда модели
         if i % 100 == 0:
             rewards_history.append(np.mean(evaluate(agent, env, n_games=1)))
-            plt.plot(rewards_history, label='rewards')
-            plt.legend()
 
             # когда модель достигает заранее определенного нами значения награды в ходе
             # моделирования реальной игры, сохраняем модель, сохраняем график и останавливаем обучение
             if rewards_history[-1] >= reward_limit:
                 print("Your agent has just passed the reward limit.")
+                plt.plot(rewards_history, label='rewards')
+                plt.legend()
                 torch.save(agent, weigths_path)
                 plt_fig.savefig(reward_figure_path)
                 break
@@ -189,7 +189,7 @@ if __name__ == "__main__":
 
     # загружаем сохраненную обученную модель, либо инициализируем новую модель с обученными весами
     # или без них
-    if config["paths"]["trained_model_path"]:
+    if config["paths"]["trained_model_path_to_train"]:
         agent = torch.load(config["paths"]["trained_model_path"])
     else:
 

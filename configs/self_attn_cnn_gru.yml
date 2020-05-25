@@ -3,9 +3,11 @@ params:
 
   paths:
     trained_weigths_path:
-    trained_model_path: "./weights/self_attn_agent_v3.pt"
+    trained_model_path_to_train:
+    trained_model_path_to_test: "./weights/"
     weigths_path_to_save: "./weights/"
-    test_videos_path: "./videos/"
+    test_trained_videos_path: "./videos/trained/"
+    test_stupid_videos_path: "./videos/stupid/"
     figures_path: "./figures/"
 
   common:
@@ -14,14 +16,14 @@ params:
     width: 42
 
   model:
-    hidden_dim: 128
-    conv_filters_num: 32
-    linear_dim: 128
+    hidden_dim: 256
+    conv_filters_num: 64
+    linear_dim: 256
 
   train:
     parallels_game_count: 5
     iter_count: 15000
-    reward_limit: 4000
+    reward_limit: 10000
     lr: 0.0001
     gamma: 0.99
 
